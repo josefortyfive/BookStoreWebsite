@@ -25,8 +25,8 @@ public class Book implements java.io.Serializable {
 	private float price;
 	private Date publishDate;
 	private Date lastUpdateTime;
-	private Set reviews = new HashSet(0);
-	private Set orderDetails = new HashSet(0);
+	private Set<Review> reviews = new HashSet<>(0);
+	private Set<OrderDetail> orderDetails = new HashSet<>(0);
 
 	public Book() {
 	}
