@@ -7,6 +7,10 @@ import jakarta.persistence.Table;
 @Table(name ="Users")
 public class Users implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer userId;
 	private String email;
 	private String password;

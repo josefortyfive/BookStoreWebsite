@@ -10,6 +10,10 @@ import java.util.Set;
  */
 public class BookOrder implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer orderId;
 	private Customer customer;
 	private Date orderDate;
@@ -19,7 +23,7 @@ public class BookOrder implements java.io.Serializable {
 	private String paymentMethod;
 	private float total;
 	private String status;
-	private Set orderDetails = new HashSet(0);
+	private Set<OrderDetail> orderDetails = new HashSet<>(0);
 
 	public BookOrder() {
 	}
@@ -37,7 +41,7 @@ public class BookOrder implements java.io.Serializable {
 	}
 
 	public BookOrder(Customer customer, Date orderDate, String shippingDate, String recipientName,
-			String recipientPhone, String paymentMethod, float total, String status, Set orderDetails) {
+			String recipientPhone, String paymentMethod, float total, String status, Set<OrderDetail> orderDetails) {
 		this.customer = customer;
 		this.orderDate = orderDate;
 		this.shippingDate = shippingDate;
@@ -121,11 +125,11 @@ public class BookOrder implements java.io.Serializable {
 		this.status = status;
 	}
 
-	public Set getOrderDetails() {
+	public Set<OrderDetail> getOrderDetails() {
 		return this.orderDetails;
 	}
 
-	public void setOrderDetails(Set orderDetails) {
+	public void setOrderDetails(Set<OrderDetail> orderDetails) {
 		this.orderDetails = orderDetails;
 	}
 

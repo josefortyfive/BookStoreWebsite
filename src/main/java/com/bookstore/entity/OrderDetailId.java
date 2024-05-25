@@ -6,6 +6,10 @@ package com.bookstore.entity;
  */
 public class OrderDetailId implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer orderId;
 	private Integer bookId;
 	private int quantity;

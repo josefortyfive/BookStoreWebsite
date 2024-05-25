@@ -8,6 +8,10 @@ import java.util.Date;
  */
 public class Review implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer reviewId;
 	private Book book;
 	private Customer customer;
