@@ -1,6 +1,10 @@
 package com.bookstore.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
@@ -25,6 +29,9 @@ public class Users implements java.io.Serializable {
 		this.fullName = fullName;
 	}
 
+	@Column(name = "user_id")
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Integer getUserId() {
 		return this.userId;
 	}
@@ -49,6 +56,7 @@ public class Users implements java.io.Serializable {
 		this.password = password;
 	}
 
+	@Column(name = "full_name")
 	public String getFullName() {
 		return this.fullName;
 	}
