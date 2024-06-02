@@ -9,6 +9,8 @@ import org.junit.Test;
 import com.bookstore.entity.Users;
 
 import jakarta.persistence.PersistenceException;
+import jakarta.persistence.EntityNotFoundException;
+import jakarta.persistence.RollbackException;
 
 public class UserDAOTest {
 	private static UserDAO userDAO;
@@ -54,9 +56,41 @@ public class UserDAOTest {
 		assertEquals(expected, actual);
 	}
 	
+	@Test
+	public void testGetUsersFound() {
+		Integer userId = 1;
+		
+		Users user1 = userDAO.get(userId);
+		
+		if(user1 != null) {
+			System.out.println(user1.getEmail());
+			System.out.println(user1.getFullName());
+		}
+	
+		assertNotNull(user1);
+	}
+	
+	@Test
+	public void testDeleteUsers() {
+		Integer userId = 3;
+		userDAO.delete(userId);
+		
+		Users user1 = userDAO.get(userId);
+		assertNull(user1);
+	}
+	
+	
+	@Test(expected = RollbackException.class)
+	public void testDeleteNonExistUsers() {
+		Integer user1 = 55;
+		userDAO.delete(user1);
+		
+	}
+	
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
 		userDAO.close();
 	}
 
+	
 }
