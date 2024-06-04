@@ -12,6 +12,7 @@ import jakarta.persistence.Query;
 
 public class JpaDAO<E> {
 	private static EntityManagerFactory entityManagerFactory;
+	private static EntityManager entityManager;
 	
 	static {
 		entityManagerFactory = Persistence.createEntityManagerFactory("BookStoreWebsite");
@@ -20,6 +21,11 @@ public class JpaDAO<E> {
 	public JpaDAO() {
 	}
 	
+	
+	public JpaDAO(EntityManager entityManager) {
+		super();
+		this.entityManager = entityManager;
+	}
 	public E create(E entity) {
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 		entityManager.getTransaction().begin();
