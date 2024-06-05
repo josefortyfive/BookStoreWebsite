@@ -1,13 +1,15 @@
 <div align="center">
 	<div>
-		<img src="images/BookstoreAdminLogo.png" />
+		<img src="images/BookstoreLogo.png" />
 	</div>
 	
 	<div>
 		<input type="text" name="keyword" size="50" />
 		<input type="button" value="Search" />
-		<a href=""></a> Sign In
-		Register
-		Cart
+		
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="Login">Sign In</a>  |
+		<a href="register">Register</a> |
+		<a href="view_cart">Cart</a>
 	</div>
 </div>
