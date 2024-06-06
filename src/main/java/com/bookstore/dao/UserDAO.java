@@ -6,9 +6,12 @@ import java.util.Map;
 
 import com.bookstore.entity.Users;
 
+import jakarta.persistence.EntityManager;
+
 public class UserDAO extends JpaDAO<Users> implements GenericDAO<Users> {
 
-	public UserDAO() {
+	public UserDAO(EntityManager entityManager) {
+		super(entityManager);
 	}
 
 	public Users create(Users user) {
@@ -35,6 +38,7 @@ public class UserDAO extends JpaDAO<Users> implements GenericDAO<Users> {
 		return null;
 	}
 	
+	/*
 	public boolean checkLogin(String email, String password) {
 		Map<String, Object> parameters = new HashMap<>();
 		parameters.put("email", email);
@@ -47,7 +51,7 @@ public class UserDAO extends JpaDAO<Users> implements GenericDAO<Users> {
 		}
 		
 		return false;
-	}
+	}*/
 
 	@Override
 	public void delete(Object userId) {

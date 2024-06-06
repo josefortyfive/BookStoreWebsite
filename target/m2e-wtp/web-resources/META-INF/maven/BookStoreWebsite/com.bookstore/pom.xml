@@ -27,9 +27,11 @@
   </build>
   <dependencies>
   	<dependency>
-  		<groupId>org.hibernate.orm</groupId>
+  		<groupId>org.hibernate</groupId>
   		<artifactId>hibernate-core</artifactId>
-  		<version>6.5.2.Final</version>
+  		<version>6.5.0.Final</version>
+  		<type>pom</type>
+  		<scope>compile</scope>
   	</dependency>
   	<dependency>
   		<groupId>mysql</groupId>

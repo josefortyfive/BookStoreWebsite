@@ -11,15 +11,17 @@ import org.junit.Test;
 import com.bookstore.entity.Users;
 
 import jakarta.persistence.PersistenceException;
+import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.persistence.RollbackException;
 
 public class UserDAOTest {
 	private static UserDAO userDAO;
+	private static EntityManager entityManager;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		userDAO = new UserDAO();
+		userDAO = new UserDAO(entityManager);
 	}
 
 
@@ -117,7 +119,7 @@ public class UserDAOTest {
 	}
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
-		userDAO.close();
+		
 	}
 
 	

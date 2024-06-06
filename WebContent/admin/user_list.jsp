@@ -12,8 +12,8 @@
 		<jsp:directive.include file="header.jsp"/>
 		
 		<div align="center">
-			<h2>Users Management</h2> |
-			<h2>Create New Users</h2>
+			<h2>Users Management</h2>
+			<h3> <a href="">Create New Users</a></h3>
 		</div>
 		<div align="center">
 			<table border="1">
@@ -24,16 +24,12 @@
 					<th> Full Name</th>
 					<th> Actions</th>
 				</tr>
-				<c:forEach var="user" items="${listUsers}" varStatus ="status">
-					<tr>
-						<td>${status.index}</td>
-						<td>${user.userId}</td>
-						<td>${user.email}</td>
-						<td>${user.fullName}</td>
-						<td>
-							<a href="edit_user?id=${user.userId}">Edit</a>
-							<a href="edit_user?id=${user.userId}">Edit</a>
-						</td>	
+				<c:forEach var="user" items="${listUsers}" varStatus = "status">
+				<tr>
+					<td>${status.index + 1}</td>
+					<td>${user.userId}</td>
+					<td>${user.email}</td>
+					<td>${user.fullName}</td>
 					</tr>
 				</c:forEach>
 				
